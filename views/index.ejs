@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html ng-app="app">
-  
 <head>
 <!-- prevent sideways scrolling-->
 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
@@ -8,8 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">-->
 <meta charset="utf-8">
 <title><%= title %></title>
-
-
 <link rel='stylesheet' href='/css/style.css' />
 <link rel='stylesheet' href='/css/app.css' />
 <link rel="stylesheet" href="/css/animations.css">
@@ -21,12 +18,11 @@
 <link  href="/css/angular-material.css" rel="stylesheet"> <!-- 3 KB -->
 <link  href="/css/bootstrap.css" rel="stylesheet"> <!-- 3 KB -->
 <link  href="/css/vis.css" rel="stylesheet"> <!-- 3 KB -->
-
 <!-- Libraries -->
 <script src="scripts/jquery/dist/jquery.js"></script>
 <script src="scripts/jqueryui/jquery-ui.min.js"></script>
 <script src="scripts/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-<link  rel='stylesheet' src="scripts/jqueryui/jqueryui.min.css"></link>
+<link  rel='stylesheet' src="scripts/jqueryui/jqueryui.min.css">
 <script src="scripts/angular/angular.js"></script>
 <script src="scripts/angular-animate/angular-animate.js"></script>
 <script src="scripts/angular-route/angular-route.js"></script>
@@ -43,59 +39,45 @@
 <link rel="stylesheet" href="scripts/bootstrap-daterangepicker/daterangepicker.css"/>
 <script src="scripts/bootstrap-daterangepicker/moment.min.js"></script>
 <script src="scripts/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+
+
+<script src="scripts/angular-ui-router/release/angular-ui-router.js"></script>
+
+
 <script src="lib/angular-daterangepicker.js"></script>
+
+
 <script src="lib/md5.js"></script>
 <!--DEV charts-->
-
 <script src="scripts/angular-bootstrap/ui-bootstrap.min.js"></script>
 <script src="scripts/chart.js/dist/Chart.js"></script>
 <script src="lib/angular-chart.js"></script>
-
 <!--vis-->
 <script src="scripts/sweetalert/dist/sweetalert.min.js"></script>
 <script src="lib/sweetalert.multi.js"></script>
-<link  rel='stylesheet' src="scripts/sweetalert/dist/sweetalert.css"></link>
+<link  rel='stylesheet' src="scripts/sweetalert/dist/sweetalert.css">
 <script src="scripts/vis/dist/vis.js"></script>
-
 <link  href="scripts/sweetalert/dist/sweetalert.css" rel="stylesheet"> <!-- 3 KB -->
 <script src="scripts/angular-dragdrop/src/angular-dragdrop.min.js"></script>
-
+<!-- style sheet -->
+<link href="scripts/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
+<!-- module -->
+<script type="text/javascript" src="scripts/angular-material-data-table/dist/md-data-table.min.js"></script>
 <script src="scripts/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
 </head>
-
-<body drag-scroll="enabled" ng-app="animateApp">  
-
-
-
-
+<body drag-scroll="enabled" ng-app="animateApp" ng-controller="ApplicationController">  
 <!--trello api-->
 <script src="https://api.trello.com/1/client.js?key=678582ba5f01c5833a7bcb673c8cffe9"></script>
-
-
-<script src="js/core.js"></script>
-<script src="js/services/app-services.js"></script>
-<script src="js/services/downtime-services.js"></script>
-<script src="js/services/timeline-services.js"></script>
-<script src="js/services/timeline-leave-services.js"></script>
-<script src="js/services/feedback-services.js"></script>
-<script src="js/services/peoplecounter-services.js"></script>
-<script src="js/controllers/app-controllers.js"></script>
-<script src="js/controllers/dashboard-controller.js"></script>
-<script src="js/controllers/feedback-controller.js"></script>
-<script src="js/controllers/downtime-controller.js"></script>
-<script src="js/controllers/dead-controller.js"></script>
-<script src="js/controllers/form-controller.js"></script>
-<script src="js/controllers/timeline-controller.js"></script>
-<script src="js/controllers/peoplecounter-controller.js"></script>
-
-<script src="js/routes/app-routes.js"></script>
-
-
+<script src="../bin/index.js"></script>
+<!--<script src="shared/services/peoplecounter-services.js"></script>-->
+<!--<script src="shared/services/open_badges-services.js"></script>-->
+<script src="shared/routes/app-routes.js"></script>
+<user-menu></user-menu>
 <div  class="view-container">
 <div   ng-click="screensaverOff()"  autoscroll="true" class="page {{ pageClass }}" ng-view>
 </div>	
 </div>
-
+<div login-dialog ng-if="!isLoginPage"></div>
 </body>
-
 </html>

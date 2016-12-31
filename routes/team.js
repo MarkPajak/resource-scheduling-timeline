@@ -2,14 +2,17 @@ var express = require('express');
 var router = express.Router();
 
 
-var Team = require('../models/Team.js');
+var Team = require('../models/account.js');
 
 /* GET /todos listing. */
 router.get('/', function(req, res, next) {
-  Team.find(function (err, todos) {
+
+  Team.find()
+	   .populate('leave_taken')
+	   .exec (  function (err, todos) {
     if (err) return next(err);
     res.json(todos);
-  });
+  })
 });
 
 /* POST /todos */
